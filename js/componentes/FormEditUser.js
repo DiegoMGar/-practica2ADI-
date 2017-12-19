@@ -4,7 +4,6 @@ import $ from 'jquery';
 class FormEditUser extends React.Component {
     constructor(props) {
         super(props)
-        console.log("Construyo FormEditUser")
         this.sendEditUsuario = this.sendEditUsuario.bind(this)
     }
 
@@ -37,16 +36,12 @@ class FormEditUser extends React.Component {
             }
         })
         .then(function(resp){
-            console.log("OK Edición de usuario")
-            console.log(resp)
             if(resp.ok)
                 return resp.json()
             else
                 throw 'status: '+resp.status
         })
         .then(function(resp){
-            console.log("Json")
-            console.log(resp.data)
             current.props.formDone()
             swal(
             'Correcto',
@@ -55,8 +50,6 @@ class FormEditUser extends React.Component {
             )
         })
         .catch(function(error){
-            console.log("ERROR")
-            console.log(error)
             swal(
             'Ooppss...',
             'Algo ha ido mal: '+error,

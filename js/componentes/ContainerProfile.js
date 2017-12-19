@@ -6,15 +6,12 @@ import FormEditUser from './FormEditUser'
 class ContainerProfile extends React.Component {
     constructor(props) {
         super(props)
-        console.log("Construyo containerProfile")
     }
     clickEditUser(){
         $("#containerProfile").slideToggle();
         $("#containerApp").slideToggle();
     }
     render() {
-        console.log("Render ContainerProfile:")
-        console.log(this.props)
         var cuerpo = 'Cargando...'
         if(this.props.usuario_oid)
             cuerpo = 'Tu perfil:'

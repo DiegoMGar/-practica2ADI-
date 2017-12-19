@@ -6,7 +6,6 @@ import FormNewWallet from './FormNewWallet'
 class ContainerApp extends React.Component {
     constructor(props) {
         super(props)
-        console.log("Construyo containerapp")
         this.deleteWalet = this.deleteWalet.bind(this)
     }
     clickNewWallet(){
@@ -24,16 +23,12 @@ class ContainerApp extends React.Component {
             }
         })
         .then(function(resp){
-            console.log("OK delete wallet")
-            console.log(resp)
             if(resp.ok)
                 return resp
             else
                 throw 'status: '+resp.status
         })
         .then(function(resp){
-            console.log("Json")
-            console.log(resp)
             current.props.getUserWallets()
             swal(
             'Correcto',
@@ -42,8 +37,6 @@ class ContainerApp extends React.Component {
             )
         })
         .catch(function(error){
-            console.log("ERROR")
-            console.log(error)
             swal(
             'Ooppss...',
             'Algo ha ido mal: '+error,
@@ -58,15 +51,11 @@ class ContainerApp extends React.Component {
                 $("#containerApp").slideDown();
             })
         }
-        console.log("Render ContainerApp:")
-        console.log(this.props)
         var cuerpo = 'Cargando...'
         if(this.props.usuario_oid)
             cuerpo = 'Tus wallets:'
         var listado = [];
         for(var elemento in this.props.wallets){
-            console.log("wallets:")
-            console.log(this.props.wallets[elemento])
                 listado.push(<tr key={this.props.wallets[elemento]._id}>
                     <td>{this.props.wallets[elemento].titulo}</td>
                     <td>{this.props.wallets[elemento].moneda_symbol}</td>

@@ -4,7 +4,6 @@ import $ from 'jquery';
 class FormNewWallet extends React.Component {
     constructor(props) {
         super(props)
-        console.log("Construyo FormNewWallet")
         this.sendNewWallet = this.sendNewWallet.bind(this)
     }
 
@@ -36,16 +35,12 @@ class FormNewWallet extends React.Component {
             }
         })
         .then(function(resp){
-            console.log("OK nueva wallet")
-            console.log(resp)
             if(resp.ok)
                 return resp.json()
             else
                 throw 'status: '+resp.status
         })
         .then(function(resp){
-            console.log("Json")
-            console.log(resp.data)
             current.props.getUserWallets()
             current.props.formDone()
             swal(
@@ -55,8 +50,6 @@ class FormNewWallet extends React.Component {
             )
         })
         .catch(function(error){
-            console.log("ERROR")
-            console.log(error)
             swal(
             'Ooppss...',
             'Algo ha ido mal: '+error,

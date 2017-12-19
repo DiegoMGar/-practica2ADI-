@@ -21,16 +21,12 @@ class LoginForm extends React.Component {
             }
         })
         .then(function(resp){
-            console.log("OK login")
-            console.log(resp)
             if(resp.ok)
                 return resp.json()
             else
                 throw 'status: '+resp.status
         })
         .then(function(resp){
-            console.log("Json")
-            console.log(resp.data)
             localStorage.setItem("usuario_oid", resp.data._id);
             localStorage.setItem("usuario_dni", resp.data.dni);
             localStorage.setItem("usuario_nombre", resp.data.nombre);
@@ -47,8 +43,6 @@ class LoginForm extends React.Component {
             })
         })
         .catch(function(error){
-            console.log("ERROR")
-            console.log(error)
             swal(
             'Ooppss...',
             'Algo ha ido mal: '+error,
@@ -71,16 +65,12 @@ class LoginForm extends React.Component {
             }
         })
         .then(function(resp){
-            console.log("OK registro")
-            console.log(resp)
             if(resp.ok)
                 return resp.json()
             else
                 throw 'status: '+resp.status
         })
         .then(function(resp){
-            console.log("Json")
-            console.log(resp.data)
             var linkLogin = document.getElementById("linkLogin")
             linkLogin.click()
             swal(
@@ -90,8 +80,6 @@ class LoginForm extends React.Component {
             )
         })
         .catch(function(error){
-            console.log("ERROR")
-            console.log(error)
             swal(
             'Ooppss...',
             'Algo ha ido mal: '+error,

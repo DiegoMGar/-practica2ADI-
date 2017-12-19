@@ -25,7 +25,6 @@ class Container extends React.Component {
     }
 
     login(oid,dni,nombre,apellidos,token){
-        console.log(oid)
         this.getUserWallets(oid,dni,nombre,apellidos,token)
     }
     logout(){
@@ -48,8 +47,6 @@ class Container extends React.Component {
             }
         })
         .then(function(resp){
-            console.log("OK ask wallets")
-            console.log(resp)
             if(resp.ok)
                 return resp.json()
             else if(resp.status == 404){
@@ -58,16 +55,10 @@ class Container extends React.Component {
                 throw 'status: '+resp.status
         })
         .then(function(resp){
-            console.log("Json")
-            console.log(resp.data)
             current.setState({usuario_oid:oid,usuario_dni:dni,usuario_token:token,usuario_nombre:nombre,usuario_apellidos:apellidos,wallets:resp.data})
             localStorage.setItem("usuario_wallets", JSON.stringify(resp.data));
-            console.log("Qué valores tengo? INNER")
-            console.log(current.state)
         })
         .catch(function(error){
-            console.log("ERROR")
-            console.log(error)
             current.setState({usuario_oid:oid,usuario_dni:dni,usuario_token:token,usuario_nombre:nombre,usuario_apellidos:apellidos,wallets:[]})
             localStorage.setItem("usuario_wallets", JSON.stringify([]));
         })
