@@ -1,20 +1,62 @@
 <html>
 <head>
     <title>Pr2 - ADI</title>
+    <!-- Bootstrap -->
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
        .tachado {
            text-decoration: line-through;
            color: grey;
        }
+       #containerFormRegistro, #containerApp,#containerFormNewWallet,#containerProfile{
+            display:none;
+       }
+       #ulListadoWallets{
+           margin-top: 35px;
+       }
+       .glyphicon{
+           cursor: pointer;
+       }
+       .marginleft25px{
+           margin-left: 25px;
+       }
     </style>
 </head>
 <meta charset="utf-8">
 <body>
-    <h2>
-        <p>Diego Maroto García</p>
-    </h2>
-    <div id="componenteNuevoItem"></div>
-    <div id="componenteLista"></div>
+    <div id="body"></div>
+    <div class="container" id="bodyContainer" style="display:none;">
+    </div>
+    <div class="container" id="loginContainer">
+    </div>
     <script src="bundle.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery-3.2.1/jquery-3.2.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="sweetalert/sweetalert.js"></script>
+    <link rel="stylesheet" href="sweetalert/sweetalert.css">
+    <script>
+        //
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        })
+        $(function(){
+            var urlApi = 'http://127.0.0.1:3000/v1/'
+            console.log(urlApi)
+            //console.log("Container: "+containerGlobal)
+            $('form').submit(function(e){
+                e.preventDefault(); 
+            });
+            $('#linkRegistro').click(function(){
+                $('#containerFormLogin').slideUp();
+                $('#containerFormRegistro').slideDown();
+            })
+            $('#linkLogin').click(function(){
+                $('#containerFormRegistro').slideUp();
+                $('#containerFormLogin').slideDown();
+            })
+        })
+    </script>
 </body>
 </html>

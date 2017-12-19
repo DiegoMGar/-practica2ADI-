@@ -1,5 +1,5 @@
 {
-  "name": "lista-compra-redux",
+  "name": "cryto-wallet",
   "version": "1.0.0",
   "description": "Plantilla de proyecto JS con Webpack+ES6",
   "main": "bundle.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ottocol/lista-compra-redux.git"
+    "url": "git+https://github.com/DiegoMGar/practica2ADI.git"
   },
-  "author": "",
+  "author": "Diego Maroto Garcia",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ottocol/lista-compra-redux/issues"
+    "url": "https://github.com/DiegoMGar/practica2ADI/issues"
   },
-  "homepage": "https://github.com/ottocol/lista-compra-redux#readme",
+  "homepage": "https://github.com/DiegoMGar/practica2ADI#readme",
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
@@ -25,8 +25,8 @@
     "webpack-dev-server": "^2.9.4"
   },
   "dependencies": {
+    "jquery": "^3.2.1",
     "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "redux": "^3.7.2"
+    "react-dom": "^16.0.0"
   }
 }

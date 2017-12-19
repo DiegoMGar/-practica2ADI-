@@ -1,22 +1,10 @@
-import { createStore } from 'redux'
-import { ADD_ITEM, TOGGLE_ITEM} from './redux/acciones';
-import rootReducer from './redux/reducers'
-
 import React from 'react'
 import ReactDOM from 'react-dom'
-import NuevoItemContainer from './componentes/NuevoItemContainer'
-import ListaContainer from './componentes/ListaContainer'
-
-var store = createStore(rootReducer)
+import Container from './componentes/Container'
 
 //Pintamos los componentes React
+console.log("React pinta")
 ReactDOM.render(
-    <NuevoItemContainer store={store}/>,
-    document.getElementById('componenteNuevoItem'),
+    <Container />,
+    document.getElementById('body'),
 )
-
-ReactDOM.render(
-    <ListaContainer store={store}/>,
-    document.getElementById('componenteLista'),
-)
-

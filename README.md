@@ -1,28 +1,24 @@
-# lista-compra-redux
+# Practica 2 ADI
 
-Ejemplo de la lista de la compra con Redux+React+Webpack
+## Autor: Diego Maroto García
 
-## Funcionalidades incluidas
+Implementado:
+- Creación de un item con el formulario de registro
+- Listar datos en el login, lista carteras
+- Listar datos en el detalle de perfil
+- Creación de un item con el formulario de cartera nueva
+- Almacenamiento de datos de usuario y token con la cabecera Authoritation
+- Bootstrap y jquery
+- Ediar nombre y apellidos en editar perfil
+- Borrar item mediante el botón de borrar cartera
 
-Esta versión solo tiene la lista en local, es decir no accede a ningún API REST. La lista  se guarda en el *store* de redux, que se crea al cargar la página (== lista inicialmente vacía, y si se recarga la página la lista se pierde). Se hace así para evitar de momento acciones asíncronas, ya que comunicar con un API REST es asíncrono.
+Se usa babel y webpack. NO se ha implementado redux.
 
-La parte de React accede al *store* "manualmente", o sea no usamos la librería `react-redux`. Los componentes `Container` están suscritos a los cambios de estado del *store* y/o le despachan acciones. El resto de componentes no "saben nada" de redux. 
+> npm install 
 
-## Instalación
+> ./node_modules/webpack-dev-server/bin/webpack-dev-server.js
 
-Antes que nada instalar las dependencias con `npm install`
+La api es node con express y mongo, se han hecho modificaciones desde la primera entrega, la versión de la entrega no va a funcionar por problemas con el CORS  en el navegador.
 
-Webpack incluye un servidor de desarrollo para poder probar la web. Para arrancarlo, en una terminal, ejecutar desde el directorio del proyecto:
-
-```bash
-./node_modules/.bin/webpack-dev-server
-```
-
-No cerrar la terminal para que no se pare el servidor de desarrollo.
-
-Para probar la aplicación, acceder a `http://localhost:8080`.
-
-Si cambia el HTML o el JS de la web, el servidor de desarrollo hará que se recargue automáticamente la página en el navegador.
-
-
-
+Mongo es la instalación por defecto, no hay que configurar nada.
+La api está adjunta en este proyecto, en el archivo comprimido apinode.tgz
